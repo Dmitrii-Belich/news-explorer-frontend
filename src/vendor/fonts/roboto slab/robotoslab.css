@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Light'), local('RobotoSlab-Light'), url('Robotoslablight.woff2') format('woff2'), url('Robotoslablight.woff') format('woff'), url('Robotoslablight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url('Robotoslabregular.woff2') format('woff2'), url('Robotoslabregular.woff') format('woff'), url('Robotoslabregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab SemiBold'), local('RobotoSlab-SemiBold'), url('Robotoslabsemibold.woff2') format('woff2'), url('Robotoslabsemibold.woff') format('woff'), url('Robotoslabsemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'), url('Robotoslabthin.woff2') format('woff2'), url('Robotoslabthin.woff') format('woff'), url('Robotoslabthin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab ExtraBold'), local('RobotoSlab-ExtraBold'), url('Robotoslabextrabold.woff2') format('woff2'), url('Robotoslabextrabold.woff') format('woff'), url('Robotoslabextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Black'), local('RobotoSlab-Black'), url('Robotoslabblack.woff2') format('woff2'), url('Robotoslabblack.woff') format('woff'), url('Robotoslabblack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Medium'), local('RobotoSlab-Medium'), url('Robotoslabmedium.woff2') format('woff2'), url('Robotoslabmedium.woff') format('woff'), url('Robotoslabmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab ExtraLight'), local('RobotoSlab-ExtraLight'), url('Robotoslabextralight.woff2') format('woff2'), url('Robotoslabextralight.woff') format('woff'), url('Robotoslabextralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url('Robotoslabbold.woff2') format('woff2'), url('Robotoslabbold.woff') format('woff'), url('Robotoslabbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -1,0 +1,123 @@
+.news-card-list {
+  background: #F5F6F7;
+  padding: 80px 0;
+  display: flex;
+
+  @media screen and (max-width: 1024px) {
+    padding: 40px 0;
+  }
+
+  @media screen and (max-width: 730px) {
+    padding: 32px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 64px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+
+    @media screen and (max-width: 1024px) {
+      margin: 0 0 32px;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    @media screen and (max-width: 730px) {
+      margin: 0 0 24px;
+
+    }
+  }
+
+  &__container {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+
+    @media screen and (max-width: 1024px) {
+      grid-gap: 8px;
+    }
+
+    @media screen and (max-width: 730px) {
+      grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    }
+  }
+
+  &__more {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    border-radius: 80px;
+    padding: 20px 84px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    margin: 64px auto 0;
+    cursor: pointer;
+    transition: all ease .3s;
+
+    &:hover {
+      background: #2F71E5;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin: 32px auto 0;
+      padding: 17px 60px;
+    }
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 360px;
+  &__img {
+    margin: 0 0 24px;
+    &_animated {
+      animation: spin 1s linear infinite reverse;
+    }
+  }
+  &__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #B6BCBF;
+    margin: 0;
+  }
+  &__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    color: #1A1B22;
+    margin: 0 0 16px;
+  }
+}
