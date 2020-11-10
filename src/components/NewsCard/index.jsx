@@ -24,9 +24,11 @@ export default function NewsCard({article, onSave, onDelete, isResult}) {
   }, [isSaved, savedArticles, article.title])
   let img
   if (isResult) {
-    img = article.urlToImage ? article.urlToImage : defaultImg
+    img = defaultImg
+    // img = article.urlToImage ? article.urlToImage : defaultImg
   } else {
-    img = article.image
+    //img = article.image
+    img = defaultImg
   }
   return (
     <li className="news-card">
@@ -41,17 +43,17 @@ export default function NewsCard({article, onSave, onDelete, isResult}) {
         <h3 className="news-card__title">{article.title}</h3>
         <p className="news-card__description">{article.description || article.text}</p>
         <p className="news-card__portal">{article.source.name || article.source}</p>
-        <button className="news-card__save"
-                onClick={() => isSaved ? onDelete(id) : onSave({
-                  title: article.title,
-                  text: article.description,
-                  date: article.publishedAt,
-                  source: article.source.name,
-                  image: img,
-                  link: article.url
-                })}>{isResult ? isSaved ? <SvgSaved/> : <SvgSave/> : <SvgDelete/>}</button>
-        {additionalText && (<p className="news-card__keyword news-card__keyword_type_additional">{additionalText}</p>)}
       </a>
+      <button className="news-card__save"
+              onClick={() => isSaved ? onDelete(id) : onSave({
+                title: article.title,
+                text: article.description,
+                date: article.publishedAt,
+                source: article.source.name,
+                image: img,
+                link: article.url
+              })}>{isResult ? isSaved ? <SvgSaved/> : <SvgSave/> : <SvgDelete/>}</button>
+      {additionalText && (<p className="news-card__keyword news-card__keyword_type_additional">{additionalText}</p>)}
     </li>
   )
 }
