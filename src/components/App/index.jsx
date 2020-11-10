@@ -4,11 +4,11 @@ import Header from "../Header";
 import PopupWithForm from "../PopupWithForm";
 import React, {useEffect, useState} from "react";
 import {register, authorize, checkToken} from '../../utils/auth'
-import { Route, Switch, Redirect} from "react-router-dom";
+import {Route, Switch, Redirect} from "react-router-dom";
 import Main from "../Main";
 import SavedNews from "../SavedNews";
 import Api from "../../utils/Api";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import {apiOptions} from "../../utils/constants";
 
 export default function App() {
@@ -28,8 +28,8 @@ export default function App() {
       checkToken(token)
         .then((res) => {
           console.log(res)
-            setUser(res);
-            setIsLoggedIn(true);
+          setUser(res);
+          setIsLoggedIn(true);
           // eslint-disable-next-line
           api = new Api(apiOptions, token)
         })
@@ -39,10 +39,10 @@ export default function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-        api.getSavedArticles().then(data => {
-          console.log(data)
-          setSavedArticles(data)
-        })
+      api.getSavedArticles().then(data => {
+        console.log(data)
+        setSavedArticles(data)
+      })
     }
     // eslint-disable-next-line
   }, [isLoggedIn]);
@@ -56,7 +56,7 @@ export default function App() {
         setNews(data.articles)
         setNewsLoading(false)
       }
-      if(!data.totalResults) {
+      if (!data.totalResults) {
         setNewsLoading(false)
         setIsSearchFailed(true)
       }
@@ -143,38 +143,38 @@ export default function App() {
   return (
     <div className="root">
       <CurrentUserContext.Provider value={{...user, savedArticles}}>
-      <Header
-        isLoggedIn={isLoggedIn}
-        popupOpen={openPopup}
-        onLogOut={onLogOut}
-        isPopupOpen={isPopupOpen}
-      />
-      <Switch>
-        <Route exact path="/">
-          <Main
-            news={news || savedArticles}
-            onSearch={searchSubmitHandler}
-            onSave={saveButtonHandler}
-            onDelete={deleteButtonHandler}
-            isLoading={newsLoading}
-            isFailed={isSearchFailed}
-          />
-        </Route>
-        <Route exact path="/saved-news">
-          <SavedNews />
-        </Route>
-        <Route path="/">
-          <Redirect to="/" />
-        </Route>
-      </Switch>
+        <Header
+          isLoggedIn={isLoggedIn}
+          popupOpen={openPopup}
+          onLogOut={onLogOut}
+          isPopupOpen={isPopupOpen}
+        />
+        <Switch>
+          <Route exact path="/">
+            <Main
+              news={savedArticles || news}
+              onSearch={searchSubmitHandler}
+              onSave={saveButtonHandler}
+              onDelete={deleteButtonHandler}
+              isLoading={newsLoading}
+              isFailed={isSearchFailed}
+            />
+          </Route>
+          <Route exact path="/saved-news">
+            <SavedNews/>
+          </Route>
+          <Route path="/">
+            <Redirect to="/"/>
+          </Route>
+        </Switch>
 
-      <Footer />
-      <PopupWithForm
-        onKeyDown={escHandler}
-        isOpen={isPopupOpen}
-        onClose={closePopup}
-        onSubmit={formSubmitHandler}
-      />
+        <Footer/>
+        <PopupWithForm
+          onKeyDown={escHandler}
+          isOpen={isPopupOpen}
+          onClose={closePopup}
+          onSubmit={formSubmitHandler}
+        />
       </CurrentUserContext.Provider>
     </div>
   );

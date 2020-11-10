@@ -32,7 +32,11 @@ export default function PopupWithForm({isOpen, onSubmit, onClose}) {
     setButtonText(isSignIn ? "Войти" : "Зарегестрироваться")
     setTitleText(isSignIn ? "Вход" : "Регистрация")
     setLinkText(isSignIn ? "Зарегестрироваться" : "Войти")
-    setValidity(isSignIn ? {email: validity.email, password: validity.password} : {email: validity.email, password: validity.password, name: false})
+    setValidity(isSignIn ? {email: validity.email, password: validity.password} : {
+      email: validity.email,
+      password: validity.password,
+      name: false
+    })
     setFormErrorMessage('')
     setName('')
     // eslint-disable-next-line
@@ -81,7 +85,7 @@ export default function PopupWithForm({isOpen, onSubmit, onClose}) {
       name
     )
       .then(() => {
-         clearInput();
+        clearInput();
       })
       .catch((message) => {
         setFormErrorMessage(message)
@@ -132,7 +136,8 @@ export default function PopupWithForm({isOpen, onSubmit, onClose}) {
           <span className="popup__input-error">{validationMessages.name}</span>
         </>)
         }
-        <p className={`popup__form-error ${formErrorMessage && 'popup__form-error_display_visible'}`}>{formErrorMessage}</p>
+        <p
+          className={`popup__form-error ${formErrorMessage && 'popup__form-error_display_visible'}`}>{formErrorMessage}</p>
         <button type="submit"
                 className={`popup__save ${
                   !isFormValid() && "popup__save_display_error"
@@ -143,10 +148,10 @@ export default function PopupWithForm({isOpen, onSubmit, onClose}) {
           onClose()
           clearInput()
         }}/>
-        <p className="popup__form-description">Или <a href="/"
-          className="popup__link" onClick={(evt) => {
-            evt.preventDefault()
-            setIsSignIn(!isSignIn)
+        <p className="popup__form-description">или <a href="/"
+                                                      className="popup__link" onClick={(evt) => {
+          evt.preventDefault()
+          setIsSignIn(!isSignIn)
         }}>{linkText}</a></p>
       </form>
       <div className="popup__overlay" onClick={() => {

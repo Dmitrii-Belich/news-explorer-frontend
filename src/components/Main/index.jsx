@@ -9,7 +9,7 @@ export default function Main({news, onSearch, onSave, onDelete, isLoading, isFai
       <Search
         onSearch={onSearch}
       />
-      {(news.length || isFailed || isLoading) &&<NewsCardList
+      {(news.length || isFailed || isLoading) && <NewsCardList
         isResults={true}
         news={news}
         onSave={onSave}
@@ -17,7 +17,7 @@ export default function Main({news, onSearch, onSave, onDelete, isLoading, isFai
         isLoading={isLoading}
         isFailed={isFailed}
       />}
-      <Author />
+      <Author/>
     </main>
   );
 }

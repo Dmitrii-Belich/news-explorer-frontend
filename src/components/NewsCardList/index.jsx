@@ -11,7 +11,8 @@ export default function NewsCardList({isResults = false, news, onSave, onDelete,
     <section className="news-card-list">
       <Container>
         {isLoading ? (
-            <div className="preloader"><img className="preloader__img preloader__img_animated" alt="Изображение загрузки" src={preloader}/> <p
+            <div className="preloader"><img className="preloader__img preloader__img_animated" alt="Изображение загрузки"
+                                            src={preloader}/> <p
               className="preloader__text">Идет поиск новостей...</p></div>)
           : news.length ?
             (<>

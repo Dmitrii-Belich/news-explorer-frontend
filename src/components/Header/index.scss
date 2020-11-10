@@ -177,6 +177,7 @@
 
     &:hover {
       color: #2F71E5;
+
       &:after {
         border-top: 2px solid #2F71E5;
       }
@@ -198,12 +199,15 @@
     cursor: pointer;
     transition: all ease .3s;
     outline: none;
+
     path {
       transition: all ease .3s;
     }
+
     &:hover {
       border-color: #2F71E5;
       color: #2F71E5;
+
       path {
         fill: #2F71E5;
       }

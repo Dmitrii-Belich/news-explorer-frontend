@@ -1,11 +1,11 @@
 import './index.scss';
 import Container from '../Container'
 import React from "react";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
 
 export default function SavedNewsHeader() {
-  const { name, savedArticles } = React.useContext(CurrentUserContext);
+  const {name, savedArticles} = React.useContext(CurrentUserContext);
   // eslint-disable-next-line no-unused-vars
   const keywords = savedArticles.reduce((sum, item) => {
     sum[item.keyword] = sum[item.keyword] + 1 || 1
