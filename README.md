@@ -1,4 +1,4 @@
-# [Проект "Mesto" на React.js](https://belich.students.nomoreparties.xyz/)
+# [Проект "News" на React.js](https://belich.students.nomoreparties.xyz/)
 
 ## Описание:
 Сайт для поиска новостей, с возможностью их сохранения
