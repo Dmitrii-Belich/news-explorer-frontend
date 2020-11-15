@@ -1,13 +1,20 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import SavedNewsHeader from "../SavedNewsHeader";
 import NewsCardList from "../NewsCardList";
-import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-export default function SavedNews({news, onSearch, onSave, onDelete, isLoading, isFailed}) {
-  const {savedArticles} = useContext(CurrentUserContext);
+export default function SavedNews({
+  news,
+  onSearch,
+  onSave,
+  onDelete,
+  isLoading,
+  isFailed,
+}) {
+  const { savedArticles } = useContext(CurrentUserContext);
   return (
     <main>
-      <SavedNewsHeader/>
+      <SavedNewsHeader />
       <NewsCardList
         news={savedArticles}
         onSave={onSave}

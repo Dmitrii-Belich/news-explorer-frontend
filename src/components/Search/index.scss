@@ -121,6 +121,19 @@
       color: #2F71E5;
     }
 
+    &_display_error {
+      border: 2px solid #E6E8EB;
+      cursor: not-allowed;
+      background: #E6E8EB;
+      color: #B6BCBF;
+
+      &:hover {
+        border: 2px solid red;
+        background: #E6E8EB;
+        color: red;
+      }
+    }
+
     @media screen and (max-width: 1024px) {
       padding: 16px 50px;
     }
