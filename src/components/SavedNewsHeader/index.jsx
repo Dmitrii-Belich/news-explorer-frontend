@@ -11,13 +11,16 @@ export default function SavedNewsHeader() {
     sum[item.keyword] = sum[item.keyword] + 1 || 1
     return sum
   }, {})
+  console.log(Object.keys(keywords).map(item => {
+    return {title: item, repeats: keywords[item]}
+  }))
   return (
     <section className="saved-news-header">
       <Container>
         <p className="saved-news-header__page-title">Сохранённые статьи</p>
         <h1 className="saved-news-header__title">{name}, у вас {savedArticles.length} сохранённых статей</h1>
         <p className="saved-news-header__keywords">По ключевым словам: <span
-          className="saved-news-header__keyword">Природа,</span> <span
+          className="saved-news-header__keyword">,</span> <span
           className="saved-news-header__keyword">Тайга</span> и <span
           className="saved-news-header__keyword">2-м другим</span></p>
       </Container>

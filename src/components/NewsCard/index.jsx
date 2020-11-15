@@ -24,11 +24,9 @@ export default function NewsCard({article, onSave, onDelete, isResult}) {
   }, [isSaved, savedArticles, article.title])
   let img
   if (isResult) {
-    img = defaultImg
-    // img = article.urlToImage ? article.urlToImage : defaultImg
+    img = article.urlToImage ? article.urlToImage : defaultImg
   } else {
-    //img = article.image
-    img = defaultImg
+    img = article.image
   }
   return (
     <li className="news-card">

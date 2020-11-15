@@ -1,3 +1,6 @@
+const currentDate = new Date()
+const pastDate = new Date()
+pastDate.setDate(pastDate.getDate() - 7)
 export default class Api {
   constructor({ baseUrl, headers }, token) {
     this._baseUrl = baseUrl;
@@ -13,7 +16,12 @@ export default class Api {
   }
 
   getSearchedArticles(string) {
-    return fetch(`GET https://nomoreparties.co/news/v2/everything?q=${string}country=us&from=2020-10-08&sortBy=publishedAtd&pageSize=100&apiKey=62b709e416f041d0ad9491827ef376e`).then(
+    return fetch(`https://nomoreparties.co/news/v2/everything?q=${string}
+      &from=${pastDate.getFullYear()}-${pastDate.getMonth() + 1}-${pastDate.getDate()}
+      &to=${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}
+      &sortBy=publishedAt
+      &pageSize=100
+      &apiKey=62b709e416f041d0ad9491827ef376ed`).then(
       this._defaultCheck
     );
   }

@@ -8,6 +8,7 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import Main from "../Main";
 import SavedNews from "../SavedNews";
 import Api from "../../utils/Api";
+
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import {apiOptions} from "../../utils/constants";
 
@@ -152,7 +153,7 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Main
-              news={savedArticles || news}
+              news={news}
               onSearch={searchSubmitHandler}
               onSave={saveButtonHandler}
               onDelete={deleteButtonHandler}
@@ -161,7 +162,12 @@ export default function App() {
             />
           </Route>
           <Route exact path="/saved-news">
-            <SavedNews/>
+            <SavedNews
+              onSave={saveButtonHandler}
+              onDelete={deleteButtonHandler}
+              isLoading={newsLoading}
+              isFailed={isSearchFailed}
+            />
           </Route>
           <Route path="/">
             <Redirect to="/"/>

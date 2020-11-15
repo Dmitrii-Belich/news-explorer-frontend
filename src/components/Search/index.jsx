@@ -12,7 +12,7 @@ export default function Search({onSearch}) {
         <p className="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном
           кабинете.</p>
         <form className="search__string" onSubmit={(evt) => evt.preventDefault()}>
-          <input className="search__input" type="text" placeholder="Введите запрос" value={search} required
+          <input className="search__input" type="text" minLength={2} placeholder="Введите запрос" value={search} required
                  onChange={(evt => setSearch(evt.target.value))}/>
           <button type="submit" className="search__button" onClick={() => {
             onSearch(search)
