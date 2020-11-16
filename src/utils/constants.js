@@ -5,8 +5,10 @@ const api = "https://api.belich.students.nomoreparties.xyz"
 export const apiOptions = {
   baseUrl: "https://api.belich.students.nomoreparties.xyz",
   headers: function (token) {
-   return {'authorization': token,
-    "Content-Type": "application/json"}
+    return {
+      'authorization': token,
+      "Content-Type": "application/json"
+    }
   },
 };
 
